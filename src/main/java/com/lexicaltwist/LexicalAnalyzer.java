@@ -4,7 +4,7 @@ import java.util.LinkedHashSet;
 
 public class LexicalAnalyzer {
 
-    // UC4
+    // UC4 logic
     public static boolean isReverse(String word1, String word2) {
 
         String reversed =
@@ -16,7 +16,7 @@ public class LexicalAnalyzer {
     }
 
 
-    // UC5
+    // UC5 logic
     public static String transformWord(String word) {
 
         String reversed =
@@ -30,14 +30,14 @@ public class LexicalAnalyzer {
     }
 
 
-    // UC6
+    // UC6 logic
     public static String combineWords(String word1, String word2) {
 
         return (word1 + word2).toUpperCase();
     }
 
 
-    // UC7
+    // UC7 logic
     public static void applyRule(String combinedWord) {
 
         int vowels = 0;
@@ -56,14 +56,12 @@ public class LexicalAnalyzer {
 
                 vowels++;
                 vowelSet.add(ch);
-
             }
 
             else if (Character.isLetter(ch)) {
 
                 consonants++;
                 consonantSet.add(ch);
-
             }
         }
 
@@ -77,7 +75,6 @@ public class LexicalAnalyzer {
             for (char ch : vowelSet) {
 
                 System.out.print(ch + " ");
-
                 count++;
 
                 if (count == 2)
@@ -95,7 +92,6 @@ public class LexicalAnalyzer {
             for (char ch : consonantSet) {
 
                 System.out.print(ch + " ");
-
                 count++;
 
                 if (count == 2)
@@ -108,7 +104,6 @@ public class LexicalAnalyzer {
 
             System.out.println(
                     "Vowels and consonants are equal");
-
         }
     }
 }

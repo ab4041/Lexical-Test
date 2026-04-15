@@ -17,21 +17,16 @@ public class LexicalTwistPuzzle {
         String word2 = sc.nextLine();
 
 
-        // UC3 validation
-        if (!WordValidator.isSingleWord(word1)) {
+        // Validation handled by WordValidator class
+        if (!WordValidator.isSingleWord(word1)
+                || !WordValidator.isSingleWord(word2)) {
 
-            System.out.println(word1 + " is an invalid word");
-            return;
-        }
-
-        if (!WordValidator.isSingleWord(word2)) {
-
-            System.out.println(word2 + " is an invalid word");
+            System.out.println("Invalid input");
             return;
         }
 
 
-        // Reverse case (UC5)
+        // Reverse match condition handled by analyzer
         if (LexicalAnalyzer.isReverse(word1, word2)) {
 
             String result =
@@ -40,16 +35,13 @@ public class LexicalTwistPuzzle {
             System.out.println(result);
         }
 
-
-        // Not reverse case (UC6 + UC7)
+        // Non-reverse condition handled by analyzer
         else {
 
             String combined =
-                    LexicalAnalyzer.combineWords(
-                            word1, word2);
+                    LexicalAnalyzer.combineWords(word1, word2);
 
-            System.out.println(
-                    "Combined Word = " + combined);
+            System.out.println("Combined Word = " + combined);
 
             LexicalAnalyzer.applyRule(combined);
         }
