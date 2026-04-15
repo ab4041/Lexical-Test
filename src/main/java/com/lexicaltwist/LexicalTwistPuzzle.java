@@ -33,7 +33,7 @@ public class LexicalTwistPuzzle {
         }
 
 
-        // UC5 transformation logic
+        // UC5 condition
         if (LexicalAnalyzer.isReverse(word1, word2)) {
 
             String result =
@@ -41,9 +41,15 @@ public class LexicalTwistPuzzle {
 
             System.out.println(result);
 
-        } else {
+        }
 
-            System.out.println("Second word is NOT reverse of first word");
+        // UC6 condition
+        else {
+
+            String combined =
+                    LexicalAnalyzer.combineWords(word1, word2);
+
+            LexicalAnalyzer.countCharacters(combined);
 
         }
 
