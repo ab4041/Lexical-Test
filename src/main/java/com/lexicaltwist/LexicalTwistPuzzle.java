@@ -22,38 +22,38 @@ public class LexicalTwistPuzzle {
 
             System.out.println(word1 + " is an invalid word");
             return;
-
         }
 
         if (!WordValidator.isSingleWord(word2)) {
 
             System.out.println(word2 + " is an invalid word");
             return;
-
         }
 
 
-        // UC5 condition
+        // Reverse case (UC5)
         if (LexicalAnalyzer.isReverse(word1, word2)) {
 
             String result =
                     LexicalAnalyzer.transformWord(word1);
 
             System.out.println(result);
-
         }
 
-        // UC6 condition
+
+        // Not reverse case (UC6 + UC7)
         else {
 
             String combined =
-                    LexicalAnalyzer.combineWords(word1, word2);
+                    LexicalAnalyzer.combineWords(
+                            word1, word2);
 
-            LexicalAnalyzer.countCharacters(combined);
+            System.out.println(
+                    "Combined Word = " + combined);
 
+            LexicalAnalyzer.applyRule(combined);
         }
 
         sc.close();
-
     }
 }
