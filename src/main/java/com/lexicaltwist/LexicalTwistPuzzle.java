@@ -17,7 +17,7 @@ public class LexicalTwistPuzzle {
         String word2 = sc.nextLine();
 
 
-        // UC3 validation logic
+        // UC3 validation
         if (!WordValidator.isSingleWord(word1)) {
 
             System.out.println(word1 + " is an invalid word");
@@ -33,10 +33,13 @@ public class LexicalTwistPuzzle {
         }
 
 
-        // UC4 reverse relationship check
+        // UC5 transformation logic
         if (LexicalAnalyzer.isReverse(word1, word2)) {
 
-            System.out.println("Second word is reverse of first word");
+            String result =
+                    LexicalAnalyzer.transformWord(word1);
+
+            System.out.println(result);
 
         } else {
 
